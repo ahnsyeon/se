@@ -4,6 +4,7 @@
 - 프로젝트 품질 요소 추정: doc/project_quality.md
 - 프로젝트 관리 계획서: doc/project_management_plan.md
 - 프로젝트 요구사항 정의서: doc/project_requirements_specification.md
+- 프로젝트 요구사항 분석서:
 
 
 ## 과제 정리
@@ -13,3 +14,5 @@
 - 프로젝트 관리 계획서 작성하기 (완료)
 ### 과제 3
 - 요구사항 정의서 작성하기 (완료)
+### 과제 4
+- 요구사항 분석서 작성하기
