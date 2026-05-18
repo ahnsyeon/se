@@ -17,7 +17,7 @@
 
 | 버전 | 날짜 | 작성자 성명 | 제/개정사항 | 비고 |
 |------|------|------------|------------|------|
-| v1.0 |  |  | 요구사항 분석서 작성 | |
+| v1.0 | 2026-05-15 | 안서연 | 요구사항 분석서 최초 작성 | |
 
 ---
 
@@ -65,10 +65,10 @@
 
 | 문서명 | 비고 |
 |--------|------|
-| project_definition.md | 프로젝트 배경, 핵심 기능, 유사 소프트웨어 분석 |
-| project_quality.md | 사용자·개발자·관리자 관점 품질 요소 정의 |
-| project_management_plan.md | 개발 절차, 일정, 팀 구성 등 |
-| project_requirements_specification.md | 기능적·비기능적·인터페이스 요구사항 정의 |
+| SilentTalk 프로젝트 정의서 | 프로젝트 배경, 핵심 기능, 유사 소프트웨어 분석 |
+| SilentTalk 대상 시스템 품질 요소 | 사용자·개발자·관리자 관점 품질 요소 정의 |
+| SilentTalk 프로젝트 관리 계획서 | 개발 절차, 일정, 팀 구성 등 |
+| SilentTalk 요구사항 정의서 | 기능적·비기능적·인터페이스 요구사항 정의 |
 
 ---
 
@@ -112,256 +112,304 @@
 
 #### 2.2.1 UseCase Description
 
----
+| Use Case Name : 회원가입을 한다. ID : U_01 Importance Level : High |
+|---|
+| **Primary Actor :** 사용자 |  
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 사용자가 이메일과 비밀번호를 입력하여 계정을 생성하는 Use Case를 표현한다. |
+| **Stakeholders and Interests** | 
+| 사용자 : 서비스 이용을 위해 회원가입을 원한다. | 
+| **Trigger :** 사용자가 회원가입 버튼을 누른다. | 
+| **Relationships** | 
+| Association : 사용자 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 사용자는 이메일, 비밀번호를 입력한다. | 
+| 2. 사용자는 회원가입 버튼을 누른다. | 
+| 3. 시스템은 회원가입이 성공한 경우 메인 화면으로 이동한다. | 
+| **Subflows :** | 
+| **Alternate / Exceptional Flows :** | 
+| 2.a1 : 공란이 있을 경우 시스템은 회원가입 실패 이유를 화면에 출력한다. | 
+| 2.a2 : 동일한 이메일이 존재할 경우 시스템은 회원가입 실패 이유를 화면에 출력한다. | 
 
-**Use Case Name : 회원가입을 한다.　ID : U_01　Importance Level : High**
+| Use Case Name : 로그인을 한다. ID : U_02 Importance Level : High |
+|---|
+| **Primary Actor :** 사용자 | 
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 사용자가 이메일과 비밀번호를 입력하여 로그인하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 사용자 : 서비스 이용을 위해 로그인을 원한다. | 
+| **Trigger :** 사용자가 로그인 버튼을 누른다. | 
+| **Relationships** | 
+| Association : 사용자 | 
+| Include : | 
+| Extend : | 
+| Generalization : |  
+| **Normal Flow of Events :** |  
+| 1. 사용자는 이메일, 비밀번호를 입력한다. |  
+| 2. 사용자는 로그인 버튼을 누른다. |
+| 3-1. 만약 로그인이 성공했다면  |
+| &nbsp;&nbsp;&nbsp;&nbsp;S-1 : 로그인 성공 | 
+| 3-2. 만약 로그인이 실패했다면 |
+| &nbsp;&nbsp;&nbsp;&nbsp;S-2 : 로그인 실패 | 
+| **Subflows :** | 
+| S-1 : 로그인 성공 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 시스템은 메인 화면으로 이동한다. | 
+| S-2 : 로그인 실패 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 시스템은 로그인 실패 이유를 화면에 출력한다. | 
+| **Alternate / Exceptional Flows :** | 
+| 2.a1 : 이메일 또는 비밀번호가 일치하지 않을 경우 시스템은 오류 메시지를 출력한다. | 
 
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 사용자가 이메일과 비밀번호를 입력하여 계정을 생성하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 서비스 이용을 위해 회원가입을 원한다.
-- **Trigger :** 사용자가 회원가입 버튼을 누른다.
-- **Relationships**
-  - Association : 사용자
-- **Normal Flow of Events :**
-  1. 사용자는 이메일, 비밀번호를 입력한다.
-  2. 사용자는 회원가입 버튼을 누른다.
-  3. 시스템은 회원가입이 성공한 경우 메인 화면으로 이동한다.
-- **Alternate / Exceptional Flows :**
-  - 2.a1 : 공란이 있을 경우 시스템은 회원가입 실패 이유를 화면에 출력한다.
-  - 2.a2 : 동일한 이메일이 존재할 경우 시스템은 회원가입 실패 이유를 화면에 출력한다.
+| Use Case Name : 상황/장소를 인식한다. ID : U_03 Importance Level : High |
+|---|
+| **Primary Actor :** 사용자 | 
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 사용자가 앱을 실행하면 시스템이 카메라 입력을 통해 현재 장소 및 환경을 자동 인식하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 사용자 : 현재 상황에 맞는 문장을 자동으로 추천받기를 원한다. | 
+| 시스템 : 카메라 입력을 분석하여 장소를 분류한다. | 
+| **Trigger :** 사용자가 앱을 실행하면 카메라가 활성화된다. | 
+| **Relationships** | 
+| Association : 사용자 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 시스템은 카메라 입력을 실시간으로 분석한다. | 
+| 2. 시스템은 CV 모델을 통해 현재 장소(카페, 병원, 학교 등)를 분류한다. | 
+| 3. 시스템은 인식 결과를 1초 이내에 화면에 반영하고 상황 맞춤 문장 목록을 갱신한다. | 
+| **Subflows :** | 
+| **Alternate / Exceptional Flows :** |
+| 3.a1 : 조명이 어둡거나 인식 불가 상황일 경우 시스템은 기본 문장 목록을 표시한다. |
 
----
+| Use Case Name : 문장 버튼을 선택한다. ID : U_04 Importance Level : High |
+|---|
+| **Primary Actor :** 사용자 |
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 사용자가 화면에 표시된 추천 문장 버튼을 선택하여 의사를 전달하는 Use Case를 표현한다. |
+| **Stakeholders and Interests** | 
+| 사용자 : 타이핑 없이 버튼 선택만으로 빠르게 의사를 표현하기를 원한다. | 
+| **Trigger :** 사용자가 문장 버튼을 누른다. | 
+| **Relationships** | 
+| Association : 사용자 | 
+| Include : 문장을 출력한다. (U_05) | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 사용자는 화면에 표시된 추천 문장 버튼을 선택한다. | 
+| 2. 시스템은 선택된 문장을 1초 이내에 상대방이 볼 수 있는 형태로 출력한다. | 
+| 3. 시스템은 선택된 문장을 대화 이력에 추가한다. | 
+| **Subflows :** | 
+| **Alternate / Exceptional Flows :** | 
+| 2.a1 : 외부 API 연동 지연 시 시스템은 로딩 인디케이터를 표시하고 캐시된 결과를 우선 제공한다. | 
 
-**Use Case Name : 로그인을 한다.　ID : U_02　Importance Level : High**
+| Use Case Name : 문장을 출력한다. ID : U_05 Importance Level : High |
+|---|
+| **Primary Actor :** 시스템 | 
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 시스템이 선택된 문장을 화면에 출력하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 시스템 : 선택된 문장을 상대방이 확인할 수 있도록 화면에 표시한다. | 
+| **Trigger :** 사용자가 문장 버튼을 선택한다. | 
+| **Relationships** | 
+| Association : 시스템 |
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 시스템은 선택된 문장을 화면 대화 영역에 표시한다. | 
+| 2. 시스템은 대화 이력을 업데이트한다. | 
+| **Subflows :** | 
+| **Alternate / Exceptional Flows :** | 
 
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 사용자가 아이디와 비밀번호를 입력하여 로그인하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 서비스 이용을 위해 로그인을 원한다.
-- **Trigger :** 사용자가 로그인 버튼을 누른다.
-- **Relationships**
-  - Association : 사용자
-- **Normal Flow of Events :**
-  1. 사용자는 아이디, 비밀번호를 입력한다.
-  2. 사용자는 로그인 버튼을 누른다.
-  3-1. 만약 로그인이 성공했다면 → S-1 : 로그인 성공
-  3-2. 만약 로그인이 실패했다면 → S-2 : 로그인 실패
-- **Subflows :**
-  - S-1 : 로그인 성공
-    1. 시스템은 메인 화면으로 이동한다.
-  - S-2 : 로그인 실패
-    1. 시스템은 로그인 실패 이유를 화면에 출력한다.
-- **Alternate / Exceptional Flows :**
-  - 2.a1 : 아이디 또는 비밀번호가 일치하지 않을 경우 시스템은 오류 메시지를 출력한다.
+| Use Case Name : 대화 흐름을 추천받는다. ID : U_06 Importance Level : High |
+|---|
+| **Primary Actor :** 사용자 |
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 시스템이 이전 대화 내용을 분석하여 다음 문장을 자동 추천하는 Use Case를 표현한다. |
+| **Stakeholders and Interests** |
+| 사용자 : 대화 맥락에 맞는 다음 문장을 자동으로 추천받기를 원한다. | 
+| **Trigger :** 사용자가 문장을 선택한 후 대화 맥락이 변경된다. | 
+| **Relationships** |
+| Association : 사용자, 시스템 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 시스템은 이전 대화 이력을 분석한다. | 
+| 2. 시스템은 NLP 모델을 통해 다음 문장 후보를 생성한다. |
+| 3. 시스템은 2초 이내에 추천 문장 목록을 갱신하여 화면에 표시한다. |
+| **Subflows :** | 
+| **Alternate / Exceptional Flows :** |
+| 3.a1 : 외부 API 응답 지연 시 이전 추천 목록을 유지하고 갱신 완료 후 화면을 업데이트한다. | 
 
----
+| Use Case Name : 제스처로 UI를 조작한다. ID : U_07 Importance Level : Mid |
+|---|
+| **Primary Actor :** 사용자 | 
+| **Use Case Type :** Detail, essential |
+| **Brief Description :** 이 Use-Case는 사용자가 손동작을 통해 문장을 선택하거나 UI를 조작하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 사용자 : 터치 없이 손동작만으로 빠르게 UI를 조작하기를 원한다. | 
+| **Trigger :** 사용자가 카메라 앞에서 정의된 손동작을 취한다. | 
+| **Relationships** | 
+| Association : 사용자 |
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 시스템은 카메라를 통해 사용자의 손동작을 인식한다. | 
+| 2-1. 만약 사용자가 문장 선택 제스처를 취한다면 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;S-1 : 문장 선택 | 
+| 2-2. 만약 사용자가 화면 전환 제스처를 취한다면 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;S-2 : 화면 전환 | 
+| **Subflows :** | 
+| S-1 : 문장 선택 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 시스템은 해당 제스처에 매핑된 문장을 선택하여 출력한다. | 
+| S-2 : 화면 전환 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 시스템은 해당 제스처에 매핑된 화면으로 전환한다. | 
+| **Alternate / Exceptional Flows :** | 
+| 1.a1 : 제스처 인식 실패 시 시스템은 오류 피드백을 시각적으로 표시한다. |
 
-**Use Case Name : 상황/장소를 인식한다.　ID : U_03　Importance Level : High**
+| Use Case Name : 즐겨찾기를 관리한다. ID : U_08 Importance Level : Mid |
+|---|
+| **Primary Actor :** 사용자 | 
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 사용자가 자주 사용하는 문장을 즐겨찾기로 등록하고 관리하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 사용자 : 자주 사용하는 문장을 즐겨찾기에 등록하여 빠르게 접근하기를 원한다. | 
+| **Trigger :** 사용자가 즐겨찾기 버튼을 누른다. | 
+| **Relationships** | 
+| Association : 사용자 | 
+| Include : |
+| Extend : |
+| Generalization : |  
+| **Normal Flow of Events :** | 
+| 1. 사용자는 문장 버튼의 즐겨찾기 아이콘을 선택한다. | |
+| 2. 시스템은 해당 문장을 즐겨찾기 목록에 추가한다. |
+| 3. 시스템은 즐겨찾기 목록을 별도 영역에 표시한다. |
+| **Subflows :** |
+| **Alternate / Exceptional Flows :** | 
+| 1.a1 : 이미 즐겨찾기에 등록된 문장인 경우 시스템은 즐겨찾기를 해제한다. |
 
-- **Primary Actor :** 시스템
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 시스템이 카메라 입력을 통해 현재 장소 및 환경을 자동 인식하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 현재 상황에 맞는 문장을 자동으로 추천받기를 원한다.
-  - 시스템 : 카메라 입력을 분석하여 장소를 분류한다.
-- **Trigger :** 앱 실행 시 카메라가 활성화된다.
-- **Relationships**
-  - Association : 시스템
-- **Normal Flow of Events :**
-  1. 시스템은 카메라 입력을 실시간으로 분석한다.
-  2. 시스템은 CV 모델을 통해 현재 장소(카페, 병원, 학교 등)를 분류한다.
-  3. 시스템은 인식 결과를 1초 이내에 화면에 반영하고 상황 맞춤 문장 목록을 갱신한다.
-- **Alternate / Exceptional Flows :**
-  - 3.a1 : 조명이 어둡거나 인식 불가 상황일 경우 시스템은 기본 문장 목록을 표시한다.
+| Use Case Name : 학습 데이터를 관리한다. ID : U_09 Importance Level : Mid |
+|---|
+| **Primary Actor :** 사용자 |
+| **Use Case Type :** Detail, essential |
+| **Brief Description :** 이 Use-Case는 사용자가 자신의 문장 사용 학습 데이터를 조회하고 초기화 또는 삭제하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 사용자 : 자신의 학습 데이터를 확인하고 필요 시 초기화하기를 원한다. | 
+| **Trigger :** 사용자가 학습 데이터 관리 메뉴를 선택한다. | 
+| **Relationships** | 
+| Association : 사용자 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 사용자는 학습 데이터 관리 화면으로 이동한다. | 
+| 2-1. 만약 사용자가 전체 초기화를 원한다면 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;S-1 : 전체 초기화 |
+| 2-2. 만약 사용자가 개별 항목을 삭제하길 원한다면 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;S-2 : 개별 삭제 | 
+| **Subflows :** |
+| S-1 : 전체 초기화 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 시스템은 확인 메시지를 표시한다. | 
+| &nbsp;&nbsp;&nbsp;&nbsp;2. 사용자가 확인을 누르면 시스템은 모든 학습 데이터를 삭제한다. |
+| S-2 : 개별 삭제 |
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 사용자는 삭제할 항목을 선택한다. | 
+| &nbsp;&nbsp;&nbsp;&nbsp;2. 시스템은 해당 항목을 삭제한다. |
+| **Alternate / Exceptional Flows :** | 
 
----
+| Use Case Name : 프로필을 관리한다. ID : U_10 Importance Level : Mid |
+|---|
+| **Primary Actor :** 사용자 | 
+| **Use Case Type :** Detail, essential |
+| **Brief Description :** 이 Use-Case는 사용자가 자신의 프로필 및 설정 정보를 조회하고 수정하는 Use Case를 표현한다. |
+| **Stakeholders and Interests** | 
+| 사용자 : 자신의 프로필 및 앱 설정을 자유롭게 수정하기를 원한다. | 
+| **Trigger :** 사용자가 프로필 설정 메뉴를 선택한다. |
+| **Relationships** |
+| Association : 사용자 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 사용자는 프로필 및 설정 화면으로 이동한다. | 
+| 2. 사용자는 원하는 항목(이름, 언어, 글자 크기 등)을 수정한다. | 
+| 3. 사용자는 저장 버튼을 누른다. | 
+| 4. 시스템은 변경 사항을 저장하고 확인 메시지를 출력한다. | 
+| **Subflows :** | 
+| **Alternate / Exceptional Flows :** | 
 
-**Use Case Name : 문장 버튼을 선택한다.　ID : U_04　Importance Level : High**
+| Use Case Name : 문장 데이터를 관리한다. ID : U_11 Importance Level : Mid |
+|---|
+| **Primary Actor :** 관리자 | 
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 관리자가 시스템에서 사용하는 문장 데이터셋을 추가, 수정, 삭제하는 Use Case를 표현한다. |
+| **Stakeholders and Interests** | 
+| 관리자 : 서비스 품질 유지를 위해 문장 데이터를 최신 상태로 관리하기를 원한다. | 
+| **Trigger :** 관리자가 문장 데이터 관리 메뉴를 선택한다. | 
+| **Relationships** | 
+| Association : 관리자 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 관리자는 문장 데이터 관리 화면으로 이동한다. | 
+| 2-1. 만약 관리자가 문장을 추가하길 원한다면 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;S-1 : 문장 추가 | 
+| 2-2. 만약 관리자가 문장을 삭제하길 원한다면 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;S-2 : 문장 삭제 | 
+| **Subflows :** | 
+| S-1 : 문장 추가 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 관리자는 장소 카테고리와 문장 내용을 입력한다. | 
+| &nbsp;&nbsp;&nbsp;&nbsp;2. 시스템은 해당 문장을 DB에 저장한다. | 
+| S-2 : 문장 삭제 | 
+| &nbsp;&nbsp;&nbsp;&nbsp;1. 관리자는 삭제할 문장을 선택한다. | 
+| &nbsp;&nbsp;&nbsp;&nbsp;2. 시스템은 해당 문장을 DB에서 삭제한다. | 
+| **Alternate / Exceptional Flows :** | 
 
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 사용자가 화면에 표시된 추천 문장 버튼을 선택하여 의사를 전달하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 타이핑 없이 버튼 선택만으로 빠르게 의사를 표현하기를 원한다.
-- **Trigger :** 사용자가 문장 버튼을 누른다.
-- **Relationships**
-  - Association : 사용자
-  - Include : 문장을 출력한다. (U_05)
-- **Normal Flow of Events :**
-  1. 사용자는 화면에 표시된 추천 문장 버튼을 선택한다.
-  2. 시스템은 선택된 문장을 1초 이내에 상대방이 볼 수 있는 형태로 출력한다.
-  3. 시스템은 선택된 문장을 대화 이력에 추가한다.
-- **Alternate / Exceptional Flows :**
-  - 2.a1 : 외부 API 연동 지연 시 시스템은 로딩 인디케이터를 표시하고 캐시된 결과를 우선 제공한다.
+| Use Case Name : 문장을 자동 생성한다. ID : U_12 Importance Level : High |
+|---|
+| **Primary Actor :** 시스템 | 
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 시스템이 인식된 장소와 대화 맥락을 결합하여 자연스러운 문장을 자동 생성하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 시스템 : 외부 NLP API와 연동하여 상황에 맞는 문장을 생성한다. | 
+| **Trigger :** 장소 인식 결과 또는 대화 맥락이 변경된다. | 
+| **Relationships** | 
+| Association : 시스템 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 시스템은 장소 인식 결과와 현재 대화 맥락 데이터를 수집한다. | 
+| 2. 시스템은 외부 NLP API(OpenAI 등)에 문장 생성을 요청한다. | 
+| 3. 시스템은 응답받은 문장을 화면 추천 목록에 표시한다. | 
+| **Subflows :** | 
+| **Alternate / Exceptional Flows :** | 
+| 2.a1 : API 타임아웃(5초) 발생 시 캐시된 추천 문장 또는 기본 문장 목록을 제공한다. | 
 
----
-
-**Use Case Name : 문장을 출력한다.　ID : U_05　Importance Level : High**
-
-- **Primary Actor :** 시스템
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 시스템이 선택된 문장을 화면에 출력하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 시스템 : 선택된 문장을 상대방이 확인할 수 있도록 화면에 표시한다.
-- **Trigger :** 사용자가 문장 버튼을 선택한다.
-- **Normal Flow of Events :**
-  1. 시스템은 선택된 문장을 화면 대화 영역에 표시한다.
-  2. 시스템은 대화 이력을 업데이트한다.
-
----
-
-**Use Case Name : 대화 흐름을 추천받는다.　ID : U_06　Importance Level : High**
-
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 시스템이 이전 대화 내용을 분석하여 다음 문장을 자동 추천하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 대화 맥락에 맞는 다음 문장을 자동으로 추천받기를 원한다.
-- **Trigger :** 사용자가 문장을 선택한 후 대화 맥락이 변경된다.
-- **Relationships**
-  - Association : 사용자, 시스템
-- **Normal Flow of Events :**
-  1. 시스템은 이전 대화 이력을 분석한다.
-  2. 시스템은 NLP 모델을 통해 다음 문장 후보를 생성한다.
-  3. 시스템은 2초 이내에 추천 문장 목록을 갱신하여 화면에 표시한다.
-- **Alternate / Exceptional Flows :**
-  - 3.a1 : 외부 API 응답 지연 시 이전 추천 목록을 유지하고 갱신 완료 후 화면을 업데이트한다.
-
----
-
-**Use Case Name : 제스처로 UI를 조작한다.　ID : U_07　Importance Level : Mid**
-
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 사용자가 손동작을 통해 문장을 선택하거나 UI를 조작하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 터치 없이 손동작만으로 빠르게 UI를 조작하기를 원한다.
-- **Trigger :** 사용자가 카메라 앞에서 정의된 손동작을 취한다.
-- **Relationships**
-  - Association : 사용자
-- **Normal Flow of Events :**
-  1. 시스템은 카메라를 통해 사용자의 손동작을 인식한다.
-  2. 만약 사용자가 문장 선택 제스처를 취한다면 → S-1 : 문장 선택
-  3. 만약 사용자가 화면 전환 제스처를 취한다면 → S-2 : 화면 전환
-- **Subflows :**
-  - S-1 : 문장 선택
-    1. 시스템은 해당 제스처에 매핑된 문장을 선택하여 출력한다.
-  - S-2 : 화면 전환
-    1. 시스템은 해당 제스처에 매핑된 화면으로 전환한다.
-- **Alternate / Exceptional Flows :**
-  - 1.a1 : 제스처 인식 실패 시 시스템은 오류 피드백을 시각적으로 표시한다.
-
----
-
-**Use Case Name : 즐겨찾기를 관리한다.　ID : U_08　Importance Level : Mid**
-
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 사용자가 자주 사용하는 문장을 즐겨찾기로 등록하고 관리하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 자주 사용하는 문장을 즐겨찾기에 등록하여 빠르게 접근하기를 원한다.
-- **Trigger :** 사용자가 즐겨찾기 버튼을 누른다.
-- **Normal Flow of Events :**
-  1. 사용자는 문장 버튼의 즐겨찾기 아이콘을 선택한다.
-  2. 시스템은 해당 문장을 즐겨찾기 목록에 추가한다.
-  3. 시스템은 즐겨찾기 목록을 별도 영역에 표시한다.
-- **Alternate / Exceptional Flows :**
-  - 1.a1 : 이미 즐겨찾기에 등록된 문장인 경우 시스템은 즐겨찾기를 해제한다.
-
----
-
-**Use Case Name : 학습 데이터를 관리한다.　ID : U_09　Importance Level : Mid**
-
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 사용자가 자신의 문장 사용 학습 데이터를 조회하고 초기화 또는 삭제하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 자신의 학습 데이터를 확인하고 필요 시 초기화하기를 원한다.
-- **Trigger :** 사용자가 학습 데이터 관리 메뉴를 선택한다.
-- **Normal Flow of Events :**
-  1. 사용자는 학습 데이터 관리 화면으로 이동한다.
-  2. 만약 사용자가 전체 초기화를 원한다면 → S-1 : 전체 초기화
-  3. 만약 사용자가 개별 항목을 삭제하길 원한다면 → S-2 : 개별 삭제
-- **Subflows :**
-  - S-1 : 전체 초기화
-    1. 시스템은 확인 메시지를 표시한다.
-    2. 사용자가 확인을 누르면 시스템은 모든 학습 데이터를 삭제한다.
-  - S-2 : 개별 삭제
-    1. 사용자는 삭제할 항목을 선택한다.
-    2. 시스템은 해당 항목을 삭제한다.
-
----
-
-**Use Case Name : 프로필을 관리한다.　ID : U_10　Importance Level : Mid**
-
-- **Primary Actor :** 사용자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 사용자가 자신의 프로필 및 설정 정보를 조회하고 수정하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 사용자 : 자신의 프로필 및 앱 설정을 자유롭게 수정하기를 원한다.
-- **Trigger :** 사용자가 프로필 설정 메뉴를 선택한다.
-- **Normal Flow of Events :**
-  1. 사용자는 프로필 및 설정 화면으로 이동한다.
-  2. 사용자는 원하는 항목(이름, 언어, 글자 크기 등)을 수정한다.
-  3. 사용자는 저장 버튼을 누른다.
-  4. 시스템은 변경 사항을 저장하고 확인 메시지를 출력한다.
-
----
-
-**Use Case Name : 문장 데이터를 관리한다.　ID : U_11　Importance Level : Mid**
-
-- **Primary Actor :** 관리자
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 관리자가 시스템에서 사용하는 문장 데이터셋을 추가, 수정, 삭제하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 관리자 : 서비스 품질 유지를 위해 문장 데이터를 최신 상태로 관리하기를 원한다.
-- **Trigger :** 관리자가 문장 데이터 관리 메뉴를 선택한다.
-- **Normal Flow of Events :**
-  1. 관리자는 문장 데이터 관리 화면으로 이동한다.
-  2. 만약 관리자가 문장을 추가하길 원한다면 → S-1 : 문장 추가
-  3. 만약 관리자가 문장을 삭제하길 원한다면 → S-2 : 문장 삭제
-- **Subflows :**
-  - S-1 : 문장 추가
-    1. 관리자는 장소 카테고리와 문장 내용을 입력한다.
-    2. 시스템은 해당 문장을 DB에 저장한다.
-  - S-2 : 문장 삭제
-    1. 관리자는 삭제할 문장을 선택한다.
-    2. 시스템은 해당 문장을 DB에서 삭제한다.
-
----
-
-**Use Case Name : 문장을 자동 생성한다.　ID : U_12　Importance Level : High**
-
-- **Primary Actor :** 시스템
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 시스템이 인식된 장소와 대화 맥락을 결합하여 자연스러운 문장을 자동 생성하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 시스템 : 외부 NLP API와 연동하여 상황에 맞는 문장을 생성한다.
-- **Trigger :** 장소 인식 결과 또는 대화 맥락이 변경된다.
-- **Normal Flow of Events :**
-  1. 시스템은 장소 인식 결과와 현재 대화 맥락 데이터를 수집한다.
-  2. 시스템은 외부 NLP API(OpenAI 등)에 문장 생성을 요청한다.
-  3. 시스템은 응답받은 문장을 화면 추천 목록에 표시한다.
-- **Alternate / Exceptional Flows :**
-  - 2.a1 : API 타임아웃(5초) 발생 시 캐시된 추천 문장 또는 기본 문장 목록을 제공한다.
-
----
-
-**Use Case Name : 사용 패턴을 학습한다.　ID : U_13　Importance Level : High**
-
-- **Primary Actor :** 시스템
-- **Use Case Type :** Detail, essential
-- **Brief Description :** 이 Use-Case는 시스템이 사용자의 문장 선택 빈도를 기록하고 학습하여 추천 순서를 조정하는 Use Case를 표현한다.
-- **Stakeholders and Interests**
-  - 시스템 : 사용자별 사용 데이터를 축적하여 개인화된 추천을 제공한다.
-- **Trigger :** 사용자가 문장 버튼을 선택한다.
-- **Normal Flow of Events :**
-  1. 시스템은 사용자가 선택한 문장과 선택 횟수를 DB에 기록한다.
-  2. 시스템은 기록된 사용 빈도를 기반으로 다음 추천 시 노출 순서를 조정한다.
-  3. 시스템은 사용자별 학습 데이터를 독립적으로 저장한다.
+| Use Case Name : 사용 패턴을 학습한다. ID : U_13 Importance Level : High |
+|---|
+| **Primary Actor :** 시스템  |
+| **Use Case Type :** Detail, essential | 
+| **Brief Description :** 이 Use-Case는 시스템이 사용자의 문장 선택 빈도를 기록하고 학습하여 추천 순서를 조정하는 Use Case를 표현한다. | 
+| **Stakeholders and Interests** | 
+| 시스템 : 사용자별 사용 데이터를 축적하여 개인화된 추천을 제공한다. | 
+| **Trigger :** 사용자가 문장 버튼을 선택한다. | 
+| **Relationships** | 
+| Association : 시스템 | 
+| Include : | 
+| Extend : | 
+| Generalization : | 
+| **Normal Flow of Events :** | 
+| 1. 시스템은 사용자가 선택한 문장과 선택 횟수를 DB에 기록한다. | 
+| 2. 시스템은 기록된 사용 빈도를 기반으로 다음 추천 시 노출 순서를 조정한다. | 
+| 3. 시스템은 사용자별 학습 데이터를 독립적으로 저장한다. | 
+| **Subflows :** |
+| **Alternate / Exceptional Flows :** |
 
 ---
 
@@ -444,9 +492,9 @@ Class SilentTalk
 - 이메일 : String
 
 **Relationships**
-- Generalization (a-kind-of) : 회원가입, 로그인
+- Generalization (a-kind-of) : 없음
 - Aggregation (has-parts) : 학습 데이터
-- Other Associations : 문장 선택
+- Other Associations : 문장 선택, 사용자 DB
 
 ---
 
@@ -856,4 +904,4 @@ sd:사용 패턴을 학습한다.
 - [부록 1] SilentTalk 프로젝트 정의서 (project_definition.md)
 - [부록 2] SilentTalk 대상 시스템 품질 요소 (project_quality.md)
 - [부록 3] SilentTalk 프로젝트 관리 계획서 (project_management_plan.md)
-- [부록 4] SilentTalk 요구사항 정의서 (project_requirements_specification.md)
+- [부록 4] SilentTalk 요구사항 정의서 (requirements_definition.md)
