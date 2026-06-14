@@ -5,6 +5,7 @@
 - 프로젝트 관리 계획서: doc/project_management_plan.md
 - 프로젝트 요구사항 정의서: doc/project_requirements_specification.md
 - 프로젝트 요구사항 분석서: doc/project_analysis.md
+- 테스트 보고서: doc/project_test_result.md
 
 
 ## 과제 정리
@@ -16,3 +17,5 @@
 - 요구사항 정의서 작성하기 (완료)
 ### 과제 4
 - 요구사항 분석서 작성하기 (완료)
+### 과제 5
+- 테스트 보고서 (완료)
